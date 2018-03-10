@@ -1,0 +1,39 @@
+{
+  "name": "real-time-socket-chat",
+  "version": "1.0.0",
+  "description": "This is a websocket based real time chat application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saikatmahapatra/real-time-socket-chat.git"
+  },
+  "keywords": [
+    "Real",
+    "Time",
+    "Chat",
+    "Socket.io",
+    "web",
+    "socket",
+    "node",
+    "socket",
+    "chat",
+    "chat",
+    "using",
+    "node"
+  ],
+  "author": "Saikat Mahapatra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saikatmahapatra/real-time-socket-chat/issues"
+  },
+  "homepage": "https://github.com/saikatmahapatra/real-time-socket-chat#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "socket.io": "^2.0.4"
+  }
+}

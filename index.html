@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Websocket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            margin-top: 30px;
+        }
+
+        #conversationMessages {
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        #chatMessageContainer {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="loginFormContainer" class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
+                    <div class="panel-body">
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <!-- <label>Enter Username</label> -->
+                                <input type="text" class="form-control" maxlength="20" name="username" id="username" placeholder="Please enter your username"
+                                    required>
+                                <br>
+                                <input type="submit" class="btn btn-primary" value="Login">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="chatMessageContainer" class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Chat Window</div>
+                    <div class="panel-body">
+
+                        <div id="usersContainer" class="col-md-4">
+                            <div class="well">
+                                <h4>Online Users</h4>
+                                <ul class="list-group" id="onlineUsers"></ul>
+                            </div>
+                        </div>
+
+                        <div id="messageContainer" class="col-md-offset-4 col-md-4 col-xs-12">
+                            <div class="conversationMessages" id="conversationMessages"></div>
+                            <form id="messageForm">
+                                <div class="form-group">
+                                    <label>Enter Message</label>
+                                    <textarea class="form-control" id="messageTxt" placeholder="Enter your message"></textarea>
+                                    <br>
+                                    <input type="submit" class="btn btn-primary" value="Send">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="assets/js/app.js"></script>
+
+
+</body>
+
+</html>
