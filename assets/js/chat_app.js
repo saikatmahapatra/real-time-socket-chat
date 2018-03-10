@@ -38,7 +38,12 @@ $(function () {
         html += '<strong>' + data.userName + ': </strong>' + data.msgTxt;
         html += '</div>';
         $conversationMessages.append(html);
+        //scrollBottom();
     });
+
+    function scrollBottom(){
+        conversationMessages.scrollTop(conversationMessages.scrollHeight);
+    }
 
     $loginForm.submit(function (e) {
         e.preventDefault();

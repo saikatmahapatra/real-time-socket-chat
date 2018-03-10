@@ -26,7 +26,6 @@
 .chat-window{
     bottom:0;
     position:fixed;
-    float:right;
 }
 .chat-window > div > .panel{
     border-radius: 5px 5px 0 0;
