@@ -25,21 +25,15 @@ body {
     padding:0;
 }
 
-.messageContainer{
-  background: #e5e5e5;
+.messageContainer{  
   margin: 0;
   padding: 0 10px 10px;
   height:300px;
   min-height:300px;  
   overflow-y: auto;
 }
-.top-bar {
-  background: #666;
-  color: white;
-  padding: 10px;
-  position: relative;
-  overflow: hidden;
-}
+
+
 .sent-msg-txt{
     padding-left:0;
     margin-left:0;
@@ -49,11 +43,14 @@ body {
     margin-right:0;
 }
 .messages {
-  background: white;
-  padding: 10px;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  max-width:100%;
+    background: #e1e1e1;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    max-width:100%;
+}
+.sent-msg-container .messages{
+    background: #dcf8c6;
 }
 .messages > p {
     font-size: 13px;
@@ -61,7 +58,7 @@ body {
   }
 .messages > time {
     font-size: 11px;
-    color: #ccc;
+    color: #999;
 }
 .chat-msg-container {
     padding: 10px;
@@ -115,7 +112,7 @@ img {
     left: -10px;
     width: 0;
     height: 0;
-    border: 5px solid #fff;
+    border: 5px solid #e1e1e1;
     border-left-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
 }
@@ -126,10 +123,16 @@ img {
     right: -10px;
     width: 0;
     height: 0;
-    border: 5px solid #fff;
+    border: 5px solid #dcf8c6;
     border-right-color: transparent;
     border-top-color: transparent;
     box-shadow: 1px 1px 2px rgba(black, 0.2); 
+    
+
+    /* border-width: 0px 0 10px 10px;
+    border-color: transparent transparent transparent #e1ffc7;
+    top: 0;
+    right: -10px; */
 }
 
 .receive-msg-txt > time{
