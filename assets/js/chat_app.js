@@ -2,7 +2,7 @@ $(function () {
     var socket = io.connect();
 
     //Message Form
-    var $chatWindowContainer = $('#chatWindowContainer');
+    var $chatWindow = $('#chatWindow');
     var $messageForm = $('#messageForm');
     var $messageTxt = $('#messageTxt');
     var $conversationMessages = $('#conversationMessages');
@@ -10,6 +10,7 @@ $(function () {
     //User Login Form
     var $loginFormContainer = $('#loginFormContainer');
     var $loginForm = $('#loginForm');
+    var $usersContainer = $("#usersContainer");
     var $onlineUsers = $('#onlineUsers');
     var $username = $('#username');
 
@@ -33,9 +34,16 @@ $(function () {
     }
 
     socket.on('new message', function (data) {
+        var curTime = new Date();
+        var displayTime = formatAMPM(curTime);
         var html = '';
-        html += '<div class="well">';
-        html += '<strong>' + data.userName + ': </strong>' + data.msgTxt;
+        html += '<div class="row chat-msg-container sent-msg-container">';
+        html += '<div class="col-10 msg-txt">';
+        html += '<div class="messages sent-msg-txt">';
+        html += '<p>' + data.msgTxt + '</p>';
+        html += '<time datetime="">' + data.userName +' '+displayTime+ ' </time>';
+        html += '</div>';
+        html += '</div>';
         html += '</div>';
         $conversationMessages.append(html);
         scrollToBottom();
@@ -47,7 +55,8 @@ $(function () {
         socket.emit('new user', $username.val(), function (data) {
             if (data) {
                 $loginFormContainer.addClass('d-none');
-                $chatWindowContainer.removeClass('d-none');
+                $usersContainer.removeClass('d-none');
+                $chatWindow.removeClass('d-none');
             }
         });
         $username.val('');
@@ -64,7 +73,18 @@ $(function () {
 });
 
 function scrollToBottom() {
-    $scrollableArea = $('#conversationMessages');
+    $scrollableArea = $('.messageContainer');
     $scrollableArea.scrollTop($scrollableArea[0].scrollHeight);
 }
 scrollToBottom();
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}

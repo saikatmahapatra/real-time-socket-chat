@@ -21,13 +21,15 @@
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -52,7 +54,7 @@
     <main role="main" class="container">
 
         <div id="loginFormContainer" class="row">
-            <div class="col-md-12">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-header bg-primary bg-primary bg-cux">
                         <h5 class="card-title txt-white">Login</h5>
@@ -72,10 +74,10 @@
             </div>
         </div>
 
-        <div id="chatWindowContainer" class="row d-none justify-content-between">
-            <div class="col-sm-6 col-md-4">
-                <div id="usersContainer" class="card">
-                    <div class="card-header bg-primary bg-cux">
+        <div id="usersContainer" class="d-none row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header bg-primary bg-primary bg-cux">
                         <h5 class="card-title txt-white">Online Users</h5>
                     </div>
                     <div class="card-body">
@@ -84,23 +86,23 @@
                     <div class="card-footer"></div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-sm-6 col-md-4">
+        <div class="row fixed-bottom d-none" id="chatWindow">
+            <div class="col-12 offset-sm-7 col-sm-5 offset-md-9 col-md-3">
                 <div class="card">
                     <div class="card-header bg-primary bg-cux">
-                        <h5 class="card-title txt-white">Messenger</h5>
+                        <h5 class="card-title txt-white">Messenger
+                            <sup> Beta</sup>
+                        </h5>
                     </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div id="messageContainer" class="col-md-12">
-                                <div class="conversationMessages" id="conversationMessages"></div>
-                            </div>
-                        </div>
+                    <div class="panel-body messageContainer">
+                        <div class="conversationMessages" id="conversationMessages"></div>
                     </div>
 
                     <div class="card-footer">
                         <form id="messageForm">
-                            <div class="form-group">                                
+                            <div class="input-group">
                                 <input type="text" class="form-control" id="messageTxt" placeholder="Type your message...">
                             </div>
                         </form>

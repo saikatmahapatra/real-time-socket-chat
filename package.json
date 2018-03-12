@@ -31,8 +31,10 @@
   },
   "homepage": "https://github.com/saikatmahapatra/real-time-socket-chat#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
     "bootstrap": "^4.0.0",
     "express": "^4.16.2",
+    "fontawesome": "^4.7.2",
     "glyphicons": "^0.2.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
