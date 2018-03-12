@@ -2,7 +2,7 @@ $(function () {
     var socket = io.connect();
 
     //Message Form
-    var $chatMessageContainer = $('#chatMessageContainer');
+    var $chatWindowContainer = $('#chatWindowContainer');
     var $messageForm = $('#messageForm');
     var $messageTxt = $('#messageTxt');
     var $conversationMessages = $('#conversationMessages');
@@ -15,15 +15,15 @@ $(function () {
 
     $messageForm.submit(sendChat);
 
-    $messageTxt.on('keyup', function (e) {
-        if (e.which == 13 || e.keyCode == 13) {
-            //code to execute here
-            console.log(e);            
-            sendChat(e);
-            return false;
-        }
-        return true;
-    });
+    // $messageTxt.on('keyup', function (e) {
+    //     if (e.which == 13 || e.keyCode == 13) {
+    //         //code to execute here
+    //         console.log(e);            
+    //         sendChat(e);
+    //         return false;
+    //     }
+    //     return true;
+    // });
 
     function sendChat(e) {
         e.preventDefault();
@@ -38,19 +38,16 @@ $(function () {
         html += '<strong>' + data.userName + ': </strong>' + data.msgTxt;
         html += '</div>';
         $conversationMessages.append(html);
-        //scrollBottom();
+        scrollToBottom();
     });
 
-    function scrollBottom(){
-        conversationMessages.scrollTop(conversationMessages.scrollHeight);
-    }
 
     $loginForm.submit(function (e) {
         e.preventDefault();
         socket.emit('new user', $username.val(), function (data) {
             if (data) {
-                $loginFormContainer.hide();
-                $chatMessageContainer.show();
+                $loginFormContainer.addClass('d-none');
+                $chatWindowContainer.removeClass('d-none');
             }
         });
         $username.val('');
@@ -65,3 +62,9 @@ $(function () {
     })
 
 });
+
+function scrollToBottom() {
+    $scrollableArea = $('#conversationMessages');
+    $scrollableArea.scrollTop($scrollableArea[0].scrollHeight);
+}
+scrollToBottom();

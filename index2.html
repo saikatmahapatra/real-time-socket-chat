@@ -1,82 +1,84 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Bootstrap 3 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>UX</title>
     <!-- Bootstrap core CSS -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
-    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.depricate.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row chat-window col-md-offset-8 col-md-3 col-sm-offset-8 col-sm-4" id="chat_window_1">
+    <main role="main" class="container">
+        <h1>Offline</h1>
+        <div class="row chatWindow justify-content-around" id="chatWindowContainer">
             <div class="col-xs-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading top-bar">
-                        <div class="col-md-8 col-xs-8">
-                            <h3 class="panel-title">
-                                <i class="glyphicon glyphicon-comment"></i> Chat</h3>
-                        </div>
-                        <div class="col-md-4 col-xs-4 text-right">
-                            <a class="chat-action" href="#">
-                                <i id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></i>
-                            </a>
-                            <a class="chat-action" href="#">
-                                <i class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></i>
-                            </a>
-                        </div>
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <h5 class="card-title txt-white">Messenger</h5>
                     </div>
 
-                    <div class="panel-body msg_container_base">
-                        <div class="row msg_container base_sent">
-                            <div class="col-md-10 col-xs-10 msg-txt">
-                                <div class="messages msg_receive">
-                                    <p>Hi, How are you?</p>
-                                    <time datetime="2009-11-13T20:00">John 51 min</time>
+                    <div class="panel-body messageContainer">
+                        <div class="conversationMessages" id="conversationMessages">
+
+                            <div class="row chat-msg-container sent-msg-container">
+                                <div class="col-md-10 col-xs-10 msg-txt">
+                                    <div class="messages sent-msg-txt">
+                                        <p>Hi, How are you?</p>
+                                        <time datetime="2009-11-13T20:00">John 51 min</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row chat-msg-container receive-msg-container">
+                                <div class="col-xs-10 col-md-10 msg-txt">
+                                    <div class="messages receive-msg-txt">
+                                        <p>Hi John,</p>
+                                        <p>I'm doing awesome ! </p>
+                                        <time datetime="2009-11-13T20:00">Mike 51 min</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row chat-msg-container sent-msg-container">
+                                <div class="col-md-10 col-xs-10 msg-txt">
+                                    <div class="messages sent-msg-txt">
+                                        <p>Hi, How are you?</p>
+                                        <time datetime="2009-11-13T20:00">John 51 min</time>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row msg_container base_receive">
-                            <div class="col-xs-10 col-md-10 msg-txt">
-                                <div class="messages msg_sent">
-                                    <p>Hi John,</p>
-                                    <p>I'm doing awesome ! </p>
-                                    <time datetime="2009-11-13T20:00">Mike 51 min</time>
-                                </div>
-                            </div>
-                        </div>                        
                     </div>
 
-                    <div class="panel-footer">
-                        <div class="input-group">
-                            <textarea class="form-control input-sm chat_input" id="chat_message" placeholder="Write your message here..." row="3" style="resize: none;"></textarea>
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
-                            </span>
-                        </div>
+                    <div class="card-footer">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="messageTxt" placeholder="Type your message...">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    </main>
     <!-- /.container -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/theme2.js"></script>
-
-
 </body>
 
 </html>
