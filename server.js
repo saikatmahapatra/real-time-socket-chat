@@ -54,5 +54,10 @@ io.sockets.on('connection', function (socket) {
 	function updateUsernames() {
 		io.sockets.emit('get users', users);
 	}
+	
+	socket.on('typing', function (data) {
+		console.log(data);
+		io.sockets.emit('typing', {userName: socket.username });
+	});
 
 });

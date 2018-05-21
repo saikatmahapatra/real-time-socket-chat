@@ -14,59 +14,26 @@
       <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
     <link href="assets/css/styles.css" rel="stylesheet" media="screen">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li> -->
-            </ul>
-            <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
-        </div>
-    </nav>
-
     <main role="main" class="container">
 
-        <div id="loginFormContainer" class="row">
-            <div class="col-4">
+        <div id="loginFormContainer" class="row justify-content-center">            
+			<div class="col-xs-12 col-sm-8 col-md-4">
                 <div class="card">
-                    <div class="card-header bg-primary bg-primary">
-                        <h5 class="card-title txt-white">Login</h5>
+                    <div class="card-header">
+                        <h6 class="card-title">Login</h6>
                     </div>
                     <div class="card-body">
                         <form id="loginForm">
                             <div class="form-group">
-                                <!-- <label>Enter Username</label> -->
-                                <input type="text" class="form-control" maxlength="20" name="username" id="username" placeholder="Please enter your username"
+                                <label>Nickname</label>
+                                <input type="text" class="form-control" maxlength="15" name="username" id="username" placeholder="Please enter your username"
                                     required>
                                 <br>
-                                <input type="submit" class="btn btn-primary bg-primary" value="Login">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-check-circle"></i> Login</button>
                             </div>
                         </form>
                     </div>
@@ -75,33 +42,25 @@
         </div>
 
         <div id="usersContainer" class="d-none row">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header bg-primary bg-primary">
-                        <h5 class="card-title txt-white">Online Users</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group" id="onlineUsers"></ul>
-                    </div>
-                    <div class="card-footer"></div>
-                </div>
+            <div class="col-md-4">
+                <h6>Online Users</h6>
+				<ul class="list-group" id="onlineUsers"></ul>
             </div>
         </div>
 
         <div class="row fixed-bottom d-none" id="chatWindow">
-            <div class="col-12 offset-sm-7 col-sm-5 offset-md-9 col-md-3">
+            <div class="col-xs-12 offset-sm-7 col-sm-5 offset-md-9 col-md-3">
                 <div class="card">
                     <div class="card-header bg-primary">
-                        <h5 class="card-title txt-white">Messenger
-                            <sup> Beta</sup>
-                        </h5>
+                        <h6 class="card-title txt-white">Messenger<sup> Beta</sup></h6>
                     </div>
-                    <div class="panel-body messageContainer">
+                    <div class="card-body messageContainer">
                         <div class="conversationMessages" id="conversationMessages"></div>
+						
                     </div>
-
+					<div id="displayTyping"></div>
                     <div class="card-footer">
-                        <form id="messageForm">
+                        <form id="messageForm">							
                             <div class="input-group">
                                 <input type="text" class="form-control" id="messageTxt" placeholder="Type your message...">
                             </div>

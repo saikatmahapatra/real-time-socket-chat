@@ -26,7 +26,9 @@ $(function () {
     //     }
     //     return true;
     // });
-
+	
+	$messageTxt.on('keyup',userTyping);
+	
     function sendChat(e) {
         e.preventDefault();
         console.log('in sendChat(). Sent by '+$loggedInUser);
@@ -81,7 +83,19 @@ $(function () {
             html += '<li class="list-group-item">' + data[i] + '</li>'
         }
         $onlineUsers.html(html);
-    })
+    });
+	
+	function userTyping(e){
+		console.log($loggedInUser+' is typing');
+		socket.emit('typing', $loggedInUser);
+	}
+	
+	socket.on('typing', function (data) { 
+alert("Ok")	;
+        $("#displayTyping").html(data.userName+" is typing message");
+    });
+	
+	
 
 });
 
