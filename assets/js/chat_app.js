@@ -13,6 +13,7 @@ $(function () {
     var $usersContainer = $("#usersContainer");
     var $onlineUsers = $('#onlineUsers');
     var $username = $('#username');
+	var $loggedInUser = null;
 
     $messageForm.submit(sendChat);
 
@@ -28,7 +29,7 @@ $(function () {
 
     function sendChat(e) {
         e.preventDefault();
-        //console.log('Send Clicked');
+        console.log('in sendChat(). Sent by '+$loggedInUser);
         socket.emit('send message', $messageTxt.val());
         $messageTxt.val('');
     }
@@ -37,14 +38,25 @@ $(function () {
         var curTime = new Date();
         var displayTime = formatAMPM(curTime);
         var html = '';
-        html += '<div class="row chat-msg-container sent-msg-container">';
+		if(data.userName != $loggedInUser){
+			html += '<div class="row chat-msg-container receive-msg-container">';
+		}else{
+			html += '<div class="row chat-msg-container sent-msg-container">';
+		}
+        //html += '<div class="row chat-msg-container sent-msg-container">';
         html += '<div class="col-10 msg-txt">';
-        html += '<div class="messages sent-msg-txt">';
+        //html += '<div class="messages sent-msg-txt">';
+		if(data.userName != $loggedInUser){
+			html += '<div class="messages receive-msg-txt">';
+		}else{
+			html += '<div class="messages sent-msg-txt">';
+		}
         html += '<p>' + data.msgTxt + '</p>';
         html += '<time datetime="">' + data.userName +' '+displayTime+ ' </time>';
         html += '</div>';
         html += '</div>';
         html += '</div>';
+		
         $conversationMessages.append(html);
         scrollToBottom();
     });
@@ -59,6 +71,7 @@ $(function () {
                 $chatWindow.removeClass('d-none');
             }
         });
+		$loggedInUser = $username.val();
         $username.val('');
     });
 
